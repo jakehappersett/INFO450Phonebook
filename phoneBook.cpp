@@ -10,13 +10,6 @@ void addEntry(char arr[10][2][50]);
 void display(char arr[10][2][50]);
 int i = 0;
 int main () {
-	//cout << phonebook[0][0] << endl;
-	//cout << phonebook[0][1][0] << endl;
-	//addEntry(pb);
-	//cout << "number is" << i << endl;
-	//addEntry(pb);
-	//cout << "number is" << i << endl;
-	//display(pb);
 	char opt;
 	do {
 		cout << "--------------------------" << endl;
@@ -52,25 +45,22 @@ int main () {
 
 void addEntry(char arr[10][2][50])
 {
-	char name[50];
 	cout << "what is the name?" << endl;
-	//cin.getline(arr[i][0], 50);
-	cin.getline(name, 50);
+	cin.getline(arr[i][0], 50);
+	//cin.getline(name, 50);
 	//checking for duplicates		
-//	for (int c=0; c <= i; c++)
-//	{
-//		if (name == arr[c][0])
-//		{
-//			cout << "you already did that" << endl;
-//		}
-//		else if (name != arr[c][0] && c==i)
-//		{
-//			arr[i][0] = name;
-//		}
-//	}
+	for (int c=0; c < i; c++){
+		if (arr[i][0] != arr[c][0])
+		{
+			i++;
+		}
+		else
+		{
+			cout << "you already did that" << endl;
+		}
+	}
 	cout << "what is the number?" << endl;
 	cin.getline(arr[i][1], 50);
-	i++;	
 
 	
 }
