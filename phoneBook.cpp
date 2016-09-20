@@ -8,6 +8,7 @@ using namespace std;
 char pb[10][2][50];
 void addEntry(char arr[10][2][50]);
 void display(char arr[10][2][50]);
+void check(char arr[10][2][50]);
 int i = 0;
 int main () {
 	char opt;
@@ -25,6 +26,7 @@ int main () {
 
 				cin.ignore(); //clears the input buffer (found this online), allows me to use the cin.getline after a cin 
 				addEntry(pb);
+				check(pb);
 			}
 			else{
 				cout << "It's full, get less friends!" << endl;
@@ -47,28 +49,26 @@ void addEntry(char arr[10][2][50])
 {
 	cout << "what is the name?" << endl;
 	cin.getline(arr[i][0], 50);
-
-//	cout << "what is the number?" << endl;
-//	cin.getline(arr[i][1], 50);
-	cout <<"i is"<< arr[i][0] << endl;
-//	for (int c=0; c < i+1; c++){
-//	//	cout << "c is" << arr[c][0] << endl;
-//	//	cout << "i in the loop is" << arr[i][0] << endl;
-//		if ((arr[c][0] == arr[i][0])&& c!=i))
-//		{
-//			cout << "you already did that" << endl;
-//		}
-//		else if ((arr[c][0] != arr[i][0])&&(c == i))
-//		{
-//			cout << "what is the number?" << endl;
-//			cin.getline(arr[i][1], 50);
-//		}
-//		else{}
-//	}
+	cout <<"i outside  is"<< i <<arr[i][0] << endl;
+	cout << "what is the number?" << endl;
+	cin.getline(arr[i][1], 50);
 	i++;
 }
 
+void check(char arr[10][2][50])
+{
+	for (int c=0; c < i-1; c++){
+		cout << "c in the loop is" << c << arr[c][0] << endl;
+		cout << "i in the loop is" << i << arr[i-1][0] << endl;
+		if ((arr[i][0] == arr[c][0])&&(arr[i][1] == arr[c][1])
+		{
+			cout << "you already did that" << endl;
+			i--;
+			addEntry(arr);
+		}
+	}
 }
+
 void display(char arr[10][2][50])
 {
 
