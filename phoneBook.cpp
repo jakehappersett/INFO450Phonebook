@@ -47,24 +47,28 @@ void addEntry(char arr[10][2][50])
 {
 	cout << "what is the name?" << endl;
 	cin.getline(arr[i][0], 50);
-	//cin.getline(name, 50);
-	//checking for duplicates		
-	for (int c=0; c < i; c++){
-		if (arr[i][0] != arr[c][0])
-		{
-			i++;
-		}
-		else
-		{
-			cout << "you already did that" << endl;
-		}
-	}
-	cout << "what is the number?" << endl;
-	cin.getline(arr[i][1], 50);
 
-	
+//	cout << "what is the number?" << endl;
+//	cin.getline(arr[i][1], 50);
+	cout <<"i is"<< arr[i][0] << endl;
+//	for (int c=0; c < i+1; c++){
+//	//	cout << "c is" << arr[c][0] << endl;
+//	//	cout << "i in the loop is" << arr[i][0] << endl;
+//		if ((arr[c][0] == arr[i][0])&& c!=i))
+//		{
+//			cout << "you already did that" << endl;
+//		}
+//		else if ((arr[c][0] != arr[i][0])&&(c == i))
+//		{
+//			cout << "what is the number?" << endl;
+//			cin.getline(arr[i][1], 50);
+//		}
+//		else{}
+//	}
+	i++;
 }
 
+}
 void display(char arr[10][2][50])
 {
 
@@ -73,3 +77,4 @@ void display(char arr[10][2][50])
 		cout << "Entry: " << a+1 << " Name: " << arr[a][0] << " Number: " << arr[a][1] << endl;
 	}
 }
+
