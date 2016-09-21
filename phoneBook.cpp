@@ -1,5 +1,7 @@
 #include <iostream> 
 #include <cstring> 
+#include <string.h>
+#include <stdio.h>
 
 
 using namespace std;
@@ -24,7 +26,6 @@ int main () {
 		{
 			if (i < 10) {
 
-				cin.ignore(); //clears the input buffer (found this online), allows me to use the cin.getline after a cin 
 				addEntry(pb);
 				check(pb);
 			}
@@ -47,9 +48,11 @@ int main () {
 
 void addEntry(char arr[10][2][50])
 {
+	cin.clear();
+	cin.ignore();  
 	cout << "what is the name?" << endl;
-	cin.getline(arr[i][0], 50);
-	cout <<"i outside  is"<< i <<arr[i][0] << endl;
+	cin.getline(arr[i][0], 50);//should be albe to replace the .getline with gets_s
+//	cout <<"i outside  is"<< i <<arr[i][0] << endl;
 	cout << "what is the number?" << endl;
 	cin.getline(arr[i][1], 50);
 	i++;
@@ -57,15 +60,21 @@ void addEntry(char arr[10][2][50])
 
 void check(char arr[10][2][50])
 {
-	for (int c=0; c < i-1; c++){
-		cout << "c in the loop is" << c << arr[c][0] << endl;
-		cout << "i in the loop is" << i << arr[i-1][0] << endl;
-		if ((arr[i][0] == arr[c][0])&&(arr[i][1] == arr[c][1])
+	for (int c=0; c < i; c++){
+		if (srtcmp(arr[c][0],arr[i][0] ==1))
 		{
 			cout << "you already did that" << endl;
 			i--;
 			addEntry(arr);
 		}
+//		cout << "c in the loop is" << c << arr[c][0] << endl;
+//		cout << "i in the loop is" << i << arr[i-1][0] << endl;
+//		if ((arr[i][0] == arr[c][0])&&(arr[i][1] == arr[c][1]))
+//		{
+//			cout << "you already did that" << endl;
+//			i--;
+//			addEntry(arr);
+//		}
 	}
 }
 
