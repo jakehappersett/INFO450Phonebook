@@ -1,7 +1,7 @@
-#include "stdafx.h"
+//#include "stdafx.h"
+#include <stdio.h>
 #include <iostream>  
 #include <cstring>
-#include <stdio.h>
 
 
 
@@ -60,10 +60,10 @@ void addEntry(char arr[10][2][50])
 
 void check(char arr[10][2][50])
 {
-	for (int c = -1; c < i; c++) {
-		if ((strcmp(arr[c][0], arr[i-1][0]) != 0 )&& (i-1 !=0))
+	for (int c = -1; c < i-1; c++) {
+		if ((strcmp(arr[c][0], arr[i-1][0]) == 0 )&& (i-1 !=0))
 		{
-			cout << "you already did that" << endl;
+			cout << "you already did that - press enter" << endl;
 			i--;
 			addEntry(arr);
 			break;
